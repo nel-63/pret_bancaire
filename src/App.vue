@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <header class="app-header">
+      <h1>Gestion des Prêts Bancaires</h1>
+    </header>
+    
+    <main class="app-content">
+      <AjoutPret/>
+    </main>
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+// Correction de la trajectoire : On pointe vers 'ajout.vue' tout en minuscules
+import AjoutPret from './components/AjoutPret.vue'
 </script>
 
 <style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: #2c3e50;
+  color: white;
+  width: 100%;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+.app-content {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
 }
 </style>
